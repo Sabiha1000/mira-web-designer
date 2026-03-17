@@ -1,37 +1,24 @@
 @import "tailwindcss";
 
 :root {
+  --neon-blue: #00AAFF;
+  --neon-orange: #FF5F00;
+  --neon-green: #00E676;
+  --neon-purple: #D500F9;
   --mirasee-blue: #1E3A8A;
   --mirasee-orange: #F97316;
-  --mirasee-light-blue: #3B82F6;
-  --mirasee-dark: #0F172A;
-  --mirasee-gray: #64748B;
 }
 
 body {
-  background-color: #F8FAFC;
-  color: #0F172A;
+  background-color: #FFFFFF;
+  color: #111111;
   font-family: 'Montserrat', sans-serif;
-}
-
-.mirasee-gradient {
-  background: linear-gradient(135deg, #1E3A8A 0%, #1d4ed8 100%);
-}
-
-.wireframe-section {
-  border: 2px dashed #CBD5E1;
-  background: #F1F5F9;
-}
-
-.wireframe-hero {
-  background: linear-gradient(135deg, rgba(30,58,138,0.08), rgba(59,130,246,0.08));
-  border: 2px dashed #3B82F6;
 }
 
 .score-bar {
   height: 8px;
   border-radius: 4px;
-  background: #E2E8F0;
+  background: #F0F0F0;
   overflow: hidden;
 }
 
@@ -46,13 +33,7 @@ body {
 }
 
 .layout-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(30, 58, 138, 0.15);
-}
-
-.layout-card.selected {
-  border-color: #1E3A8A;
-  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+  transform: translateY(-3px);
 }
 
 @keyframes spin {

@@ -56,30 +56,30 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: "#F0F4F8", fontFamily: "'Montserrat', sans-serif" }}>
+    <div className="min-h-screen" style={{ background: "#FFFFFF", fontFamily: "'Montserrat', sans-serif" }}>
       {/* Top Nav */}
-      <header className="sticky top-0 z-50 shadow-sm" style={{ background: "#0F172A" }}>
+      <header className="sticky top-0 z-50" style={{ background: "white", borderBottom: "1px solid #F0F0F0", boxShadow: "0 2px 16px rgba(0,0,0,0.06)" }}>
         <div className="max-w-screen-xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-black text-sm" style={{ background: "#F97316" }}>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-black text-sm" style={{ background: "linear-gradient(135deg, #00AAFF, #0055FF)" }}>
               M
             </div>
             <div>
-              <span className="text-white font-black text-base tracking-tight" style={{ fontWeight: 900 }}>
+              <span className="font-black text-base tracking-tight" style={{ fontWeight: 900, color: "#111" }}>
                 Mira Web Designer
               </span>
-              <span className="text-slate-400 text-xs ml-2">by Mirasee</span>
+              <span className="text-xs ml-2" style={{ color: "#aaa" }}>by Mirasee</span>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <button
               onClick={handleDemo}
               className="px-3 py-1.5 rounded-lg text-xs font-bold cursor-pointer transition-all hover:opacity-90"
-              style={{ background: "#F97316", color: "white", fontWeight: 700 }}
+              style={{ background: "linear-gradient(135deg, #FF5F00, #FF8F00)", color: "white", fontWeight: 700 }}
             >
               ▶ Try Demo
             </button>
-            <span className="text-xs text-slate-400 hidden sm:block">Powered by Claude AI</span>
+            <span className="text-xs hidden sm:block" style={{ color: "#bbb" }}>Powered by Claude AI</span>
             <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           </div>
         </div>
@@ -87,20 +87,20 @@ export default function Home() {
 
       {/* Hero Banner (shown when no results) */}
       {!analysisResult && !isLoading && (
-        <div className="py-10 px-6 text-center" style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #1d4ed8 100%)" }}>
+        <div className="py-10 px-6 text-center" style={{ background: "linear-gradient(135deg, #F8FAFF 0%, #EEF4FF 100%)", borderBottom: "1px solid #E8EEFF" }}>
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-white font-black text-3xl sm:text-4xl leading-tight" style={{ fontWeight: 900 }}>
+            <h1 className="font-black text-3xl sm:text-4xl leading-tight" style={{ fontWeight: 900, color: "#111" }}>
               Turn Marketing Copy into<br />
-              <span style={{ color: "#F97316" }}>Conversion-Ready Layouts</span>
+              <span style={{ background: "linear-gradient(135deg, #00AAFF, #0055FF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Conversion-Ready Layouts</span>
             </h1>
-            <p className="text-blue-200 text-base mt-3 leading-relaxed">
+            <p className="text-base mt-3 leading-relaxed" style={{ color: "#666" }}>
               Paste your copy, and Claude AI will analyze it and generate<br className="hidden sm:block" />
-              4 Mirasee-style landing page layout variations — instantly.
+              4 realistic landing page mockups — instantly.
             </p>
-            <div className="flex items-center justify-center gap-6 mt-5 text-xs text-blue-300">
-              <span>✅ Mirasee Design Style</span>
-              <span>✅ Conversion Scoring</span>
-              <span>✅ Export Ready</span>
+            <div className="flex items-center justify-center gap-6 mt-5 text-xs" style={{ color: "#888" }}>
+              <span style={{ color: "#00AAFF", fontWeight: 700 }}>✅ Realistic Page Mockups</span>
+              <span style={{ color: "#FF5F00", fontWeight: 700 }}>✅ Conversion Scoring</span>
+              <span style={{ color: "#D500F9", fontWeight: 700 }}>✅ Full HTML Export</span>
             </div>
           </div>
         </div>
@@ -165,6 +165,7 @@ export default function Home() {
                   layouts={analysisResult.layouts}
                   selectedLayoutId={selectedLayoutId}
                   onSelectLayout={setSelectedLayoutId}
+                  detectedSections={analysisResult.detectedSections}
                 />
               </>
             ) : (
@@ -231,7 +232,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="mt-12 py-6 border-t border-slate-200 text-center" style={{ background: "#F0F4F8" }}>
+      <footer className="mt-12 py-6 text-center" style={{ background: "white", borderTop: "1px solid #F0F0F0" }}>
         <p className="text-xs text-slate-400">
           Mira Web Designer — Built for Mirasee page designers · Powered by Claude Opus 4.6
         </p>
